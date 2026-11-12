@@ -1,0 +1,13 @@
+{
+  "versionCode": 3,
+  "versionName": "0.2.0",
+  "apk": "https://jaemeson-ra.github.io/libera/Libera-0.2.0.apk",
+  "sha256": "28b722b526d76743bbdbd7ce4c2f22921c1560a341414f92dc16e06cd8910d13",
+  "size": 4145740,
+  "minSdk": 26,
+  "notes": {
+    "es": "Primera versión para compartir: actualizaciones desde la app, envío al PC con dirección corta y código, sigue en segundo plano.",
+    "fr": "Première version à partager : mises à jour dans l'appli, envoi au PC avec adresse courte et code, continue en arrière-plan.",
+    "en": "First shareable version: in-app updates, send to PC with a short address and code, keeps going in the background."
+  }
+}

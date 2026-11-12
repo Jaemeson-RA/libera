@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Libera · Libera espacio en tu teléfono</title>
+<meta name="description" content="Libera: app gratuita para liberar espacio en el teléfono y enviar fotos y videos al PC. Sin publicidad, sin cuenta.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<style>
+@font-face { font-family: "DM Sans"; font-weight: 500; font-display: swap; src: url("fonts/dm-sans-v17-latin_latin-ext-500.woff2") format("woff2"); }
+@font-face { font-family: "DM Sans"; font-weight: 700; font-display: swap; src: url("fonts/dm-sans-v17-latin_latin-ext-700.woff2") format("woff2"); }
+:root { color-scheme: light; --bg: #f4f3ef; --surface: #fcfcfb; --surface-2: #efeee9; --line: #e3e2dc; --ink: #0b0b0b; --ink-2: #52514e; --ink-3: #75746f; --primary: #141413; --on-primary: #fcfcfb; --c1: #2a78d6; --c2: #eb6834; --c3: #1baf7a; }
+@media (prefers-color-scheme: dark) { :root { color-scheme: dark; --bg: #121211; --surface: #1a1a19; --surface-2: #252523; --line: #30302d; --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #94938b; --primary: #f0efec; --on-primary: #121211; --c1: #3987e5; --c2: #d95926; --c3: #199e70; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 500 16px/1.5 "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
+main { max-width: 760px; margin: 0 auto; padding: 28px 16px 56px; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 22px; letter-spacing: -.02em; }
+.langs { display: flex; gap: 4px; background: var(--surface-2); border-radius: 12px; padding: 3px; }
+.langs button { font: inherit; font-size: 14px; border: 0; background: none; color: var(--ink-2); padding: 6px 10px; border-radius: 9px; cursor: pointer; }
+.langs button.on { background: var(--surface); color: var(--ink); font-weight: 700; }
+h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.08; letter-spacing: -.03em; margin: 36px 0 12px; }
+.lead { color: var(--ink-2); font-size: 18px; margin: 0 0 28px; max-width: 34em; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 22px; margin-bottom: 16px; }
+.dl { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 56px; border-radius: 16px; background: var(--primary); color: var(--on-primary); font-weight: 700; font-size: 18px; text-decoration: none; }
+.dl svg { width: 22px; height: 22px; }
+.meta { text-align: center; color: var(--ink-3); font-size: 14px; margin-top: 8px; }
+ol { list-style: none; padding: 0; margin: 20px 0 0; counter-reset: s; }
+ol li { counter-increment: s; display: flex; gap: 12px; margin: 14px 0; }
+ol li::before { content: counter(s); flex: none; width: 26px; height: 26px; border-radius: 13px; background: var(--ink); color: var(--surface); display: grid; place-items: center; font-size: 14px; font-weight: 700; margin-top: 1px; }
+ol li b { display: block; }
+ol li span { color: var(--ink-2); font-size: 15px; }
+.note { background: var(--surface-2); border-radius: 14px; padding: 12px 14px; font-size: 14px; color: var(--ink-2); margin-top: 14px; }
+h2 { font-size: 20px; margin: 0 0 6px; letter-spacing: -.01em; }
+.pc { display: none; gap: 20px; align-items: center; }
+.pc img { width: 132px; height: 132px; background: #fff; padding: 8px; border-radius: 12px; flex: none; }
+@media (min-width: 720px) and (hover: hover) { .pc { display: flex; } }
+.feats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 28px 0 16px; }
+.feat { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
+.feat b { display: block; margin-bottom: 4px; }
+.feat span { color: var(--ink-2); font-size: 14px; }
+.dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; margin-right: 8px; }
+footer { color: var(--ink-3); font-size: 13px; text-align: center; margin-top: 28px; word-break: break-all; }
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <div class="brand"><img src="icon.svg" width="30" height="30" alt="">Libera</div>
+    <div class="langs" role="group" aria-label="Idioma">
+      <button data-l="es">ES</button><button data-l="fr">FR</button><button data-l="en">EN</button>
+    </div>
+  </div>
+
+  <h1 data-i="h1"></h1>
+  <p class="lead" data-i="lead"></p>
+
+  <section class="card" id="android">
+    <h2 data-i="android"></h2>
+    <a class="dl" href="Libera-0.2.0.apk" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>
+      <span data-i="download"></span>
+    </a>
+    <div class="meta"><span data-i="version"></span> 0.2.0 · 4.1 MB · Android 8+</div>
+    <ol>
+      <li><div><b data-i="s1"></b><span data-i="s1d"></span></div></li>
+      <li><div><b data-i="s2"></b><span data-i="s2d"></span></div></li>
+      <li><div><b data-i="s3"></b><span data-i="s3d"></span></div></li>
+    </ol>
+    <div class="note" data-i="protect"></div>
+  </section>
+
+  <section class="card pc">
+    <img src="qr.svg" alt="QR">
+    <div><h2 data-i="pcTitle"></h2><div style="color:var(--ink-2)" data-i="pcText"></div></div>
+  </section>
+
+  <section class="card">
+    <h2 data-i="iphone"></h2>
+    <div style="color:var(--ink-2)" data-i="iphoneText"></div>
+  </section>
+
+  <div class="feats">
+    <div class="feat"><b><span class="dot" style="background:var(--c1)"></span><span data-i="f1"></span></b><span data-i="f1d"></span></div>
+    <div class="feat"><b><span class="dot" style="background:var(--c2)"></span><span data-i="f2"></span></b><span data-i="f2d"></span></div>
+    <div class="feat"><b><span class="dot" style="background:var(--c3)"></span><span data-i="f3"></span></b><span data-i="f3d"></span></div>
+  </div>
+
+  <footer><span data-i="free"></span><br>SHA-256 : 28b722b526d76743bbdbd7ce4c2f22921c1560a341414f92dc16e06cd8910d13</footer>
+</main>
+<script>
+var T = {
+  es: {
+    h1: "Libera espacio en tu teléfono, rápido y sin riesgos",
+    lead: "Mira qué ocupa lugar, limpia lo que sobra con un toque y envía tus fotos y videos al PC por Wi-Fi. Gratis, sin publicidad y sin cuenta.",
+    android: "Android", download: "Descargar para Android", version: "Versión",
+    s1: "Descarga el archivo", s1d: "Toca el botón de arriba desde el teléfono.",
+    s2: "Permite la instalación (una sola vez)", s2d: "Android pregunta si el navegador puede «instalar apps desconocidas»: actívalo y vuelve atrás. No hace falta el modo desarrollador.",
+    s3: "Instala y abre Libera", s3d: "Las actualizaciones se ofrecen después dentro de la app.",
+    protect: "Si Play Protect dice «App no reconocida», es porque Libera no está en Play Store: toca «Más detalles» y luego «Instalar de todos modos».",
+    pcTitle: "¿Estás en el PC?", pcText: "Escanea este código con la cámara del teléfono para abrir esta página allí.",
+    iphone: "iPhone", iphoneText: "Próximamente: versión web gratuita para abrir desde Safari, sin instalar nada.",
+    f1: "Ves qué ocupa espacio", f1d: "Gráfico por tipo, archivos ordenados por tamaño o fecha, apps más pesadas.",
+    f2: "Limpieza exprés", f2d: "Papelera, miniaturas, caché, duplicados: lo seguro va marcado, tú decides.",
+    f3: "Al PC por Wi-Fi", f3d: "ZIP comprimido, dirección y código en el PC, y luego liberas el espacio.",
+    free: "Gratis · Sin publicidad · Sin cuenta · Tus archivos no salen de tu Wi-Fi"
+  },
+  fr: {
+    h1: "Libérez de la place sur votre téléphone, vite et sans risque",
+    lead: "Voyez ce qui prend de la place, nettoyez le superflu d'une touche et envoyez vos photos et vidéos au PC en Wi-Fi. Gratuit, sans publicité, sans compte.",
+    android: "Android", download: "Télécharger pour Android", version: "Version",
+    s1: "Téléchargez le fichier", s1d: "Touchez le bouton ci-dessus depuis le téléphone.",
+    s2: "Autorisez l'installation (une seule fois)", s2d: "Android demande si le navigateur peut « installer des applis inconnues » : activez puis revenez. Pas besoin du mode développeur.",
+    s3: "Installez et ouvrez Libera", s3d: "Les mises à jour sont ensuite proposées dans l'appli.",
+    protect: "Si Play Protect affiche « Appli non reconnue », c'est que Libera n'est pas sur le Play Store : touchez « Plus de détails » puis « Installer quand même ».",
+    pcTitle: "Vous êtes sur le PC ?", pcText: "Scannez ce code avec l'appareil photo du téléphone pour ouvrir cette page dessus.",
+    iphone: "iPhone", iphoneText: "Bientôt : version web gratuite à ouvrir dans Safari, sans rien installer.",
+    f1: "Voyez où part la place", f1d: "Graphique par type, fichiers triés par taille ou date, applis les plus lourdes.",
+    f2: "Nettoyage express", f2d: "Corbeille, miniatures, cache, doublons : le sûr est coché, vous décidez.",
+    f3: "Vers le PC en Wi-Fi", f3d: "ZIP compressé, adresse et code sur le PC, puis vous libérez la place.",
+    free: "Gratuit · Sans publicité · Sans compte · Vos fichiers ne quittent pas votre Wi-Fi"
+  },
+  en: {
+    h1: "Free up space on your phone, fast and safely",
+    lead: "See what takes up space, clean the clutter in one tap and send your photos and videos to your PC over Wi-Fi. Free, no ads, no account.",
+    android: "Android", download: "Download for Android", version: "Version",
+    s1: "Download the file", s1d: "Tap the button above on your phone.",
+    s2: "Allow the install (once)", s2d: "Android asks whether your browser may \"install unknown apps\": turn it on and go back. No developer mode needed.",
+    s3: "Install and open Libera", s3d: "Updates are then offered inside the app.",
+    protect: "If Play Protect says \"Unrecognized app\", it's because Libera isn't on the Play Store: tap \"More details\", then \"Install anyway\".",
+    pcTitle: "On your PC?", pcText: "Scan this code with your phone's camera to open this page there.",
+    iphone: "iPhone", iphoneText: "Coming soon: a free web version to open in Safari, nothing to install.",
+    f1: "See where space goes", f1d: "Chart by type, files sorted by size or date, heaviest apps.",
+    f2: "Quick clean", f2d: "Trash, thumbnails, cache, duplicates: safe items are ticked, you decide.",
+    f3: "To your PC over Wi-Fi", f3d: "Compressed ZIP, address and code on the PC, then free up the space.",
+    free: "Free · No ads · No account · Your files never leave your Wi-Fi"
+  }
+};
+function setLang(l) {
+  if (!T[l]) l = "es";
+  document.documentElement.lang = l;
+  document.querySelectorAll("[data-i]").forEach(function (el) { el.textContent = T[l][el.getAttribute("data-i")] || ""; });
+  document.querySelectorAll(".langs button").forEach(function (b) { b.classList.toggle("on", b.getAttribute("data-l") === l); });
+  try { localStorage.setItem("lang", l); } catch (e) {}
+}
+document.querySelectorAll(".langs button").forEach(function (b) { b.onclick = function () { setLang(b.getAttribute("data-l")); }; });
+var saved = null; try { saved = localStorage.getItem("lang"); } catch (e) {}
+var nav = (navigator.language || "es").slice(0, 2);
+setLang(saved || (nav === "fr" || nav === "en" ? nav : "es"));
+</script>
+</body>
+</html>
