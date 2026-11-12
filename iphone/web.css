@@ -1,0 +1,100 @@
+/* Libera web — compléments à app.css (copié tel quel de l'appli au build) : page qui défile, iPhone et PC. */
+body { overflow: auto; overflow-x: hidden; -webkit-user-select: auto; user-select: auto; }
+#app.web { position: static; min-height: 100%; padding: 0 0 env(safe-area-inset-bottom); }
+#app.web.wide { max-width: 980px; }
+#app.web .top { padding-top: calc(14px + env(safe-area-inset-top)); }
+#app.web #view { overflow: visible; padding: 6px 16px 40px; }
+.toast { bottom: calc(24px + env(safe-area-inset-bottom)); }
+.center { text-align: center; }
+.mono { font-family: var(--num); font-weight: 600; color: var(--ink); word-break: break-all; }
+.brand .badge { margin-left: 4px; }
+
+/* choix de langue (comme la page Android) */
+.langs { display: flex; gap: 4px; background: var(--surface-2); border-radius: 12px; padding: 3px; }
+.langs button { font-size: 14px; color: var(--ink-2); padding: 6px 10px; border-radius: 9px; }
+.langs button.on { background: var(--surface); color: var(--ink); font-weight: 700; }
+
+.hero { margin: 8px 2px 18px; }
+.hero .h1 { font-size: 28px; line-height: 1.12; }
+.hero p { margin: 8px 0 0; }
+
+/* étapes numérotées */
+.steps-list { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+.steps-list li { counter-increment: s; display: grid; grid-template-columns: 26px 1fr; column-gap: 12px; margin: 10px 0; }
+.steps-list li::before { content: counter(s); grid-row: span 2; width: 26px; height: 26px; border-radius: 13px; background: var(--ink); color: var(--surface); display: grid; place-items: center; font-size: 14px; font-weight: 700; margin-top: 1px; }
+.steps-list li b { display: block; }
+.steps-list li span { color: var(--ink-2); font-size: 14px; }
+.steps-list li:first-child { margin-top: 0; }
+.steps-list li:last-child { margin-bottom: 0; }
+
+.note > div { min-width: 0; }
+.note.good { background: color-mix(in srgb, var(--good) 12%, var(--surface)); color: var(--ink); }
+.note.good .ic { color: var(--good-ink); }
+.status { display: flex; align-items: center; gap: 10px; justify-content: center; color: var(--ink-2); font-size: 14px; margin: 14px 0 4px; text-align: left; }
+.status.good { color: var(--good-ink); font-weight: 700; }
+.status.warn { color: var(--warn-ink); }
+.linkbar { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 14px; margin-bottom: 12px; background: color-mix(in srgb, var(--good) 12%, var(--surface)); font-size: 14px; }
+.linkbar .ic { color: var(--good-ink); }
+.linkbar span { flex: 1; font-weight: 700; }
+.linkbar .link { font-size: 13px; }
+
+/* liste des photos choisies */
+.list-head { margin: 2px 0 12px; }
+.list-head .btn .ic { width: 18px; height: 18px; }
+.plist { margin: 10px -16px 12px; }
+.prow { display: flex; align-items: center; gap: 12px; width: 100%; padding: 8px 16px; text-align: left; min-height: 64px; }
+.prow + .prow { border-top: 1px solid var(--line); }
+.prow:not(.on) { opacity: .55; }
+.prow .thumb { width: 48px; height: 48px; border-radius: 10px; flex: none; background: var(--surface-2); display: grid; place-items: center; overflow: hidden; color: var(--ink-3); position: relative; }
+.prow .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.prow .grow { display: flex; flex-direction: column; }
+.prow .title { font-weight: 700; font-size: 14px; }
+.prow .sub { font-size: 12.5px; color: var(--ink-3); }
+.prow .sz { font-size: 14px; white-space: nowrap; }
+.vbadge { position: absolute; left: 3px; bottom: 3px; font-size: 10px; line-height: 1; padding: 2px 4px; border-radius: 5px; background: rgba(0,0,0,.6); color: #fff; display: flex; align-items: center; }
+.vbadge .ic { width: 11px; height: 11px; }
+.opt { padding: 14px 16px; }
+.opt .tile-btn { align-items: flex-start; }
+.opt .check, .small-opt .check { margin-top: 1px; }
+.opt .name { font-weight: 700; }
+.opt .desc { font-size: 13px; color: var(--ink-2); margin-top: 3px; }
+.opt .note { margin-bottom: 0; }
+.tile-btn.on > .check { background: var(--ink); border-color: var(--ink); color: var(--surface); }
+.tile-btn.on > .check .ic { opacity: 1; }
+.btn .ic { width: 19px; height: 19px; }
+.sticky-foot { z-index: 3; }
+
+/* code */
+.code-in { display: block; width: 100%; height: 64px; margin: 4px 0 12px; text-align: center; font-size: 34px; letter-spacing: .18em; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); outline: none; -webkit-user-select: text; user-select: text; }
+.code-in:focus { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.code-in:disabled { opacity: .6; }
+.code-in::placeholder { color: var(--ink-3); opacity: .5; }
+.url-box { font-size: 17px; }
+
+/* envoi */
+.progress.big { height: 14px; border-radius: 8px; margin: 18px 0 10px; }
+.prog-line { margin-bottom: 4px; }
+.big-result .muted { margin-top: 4px; }
+.card.tight { padding: 4px 16px; }
+.kv span.ellipsis { min-width: 0; margin-right: 12px; }
+
+/* page PC */
+.pc-title { margin: 4px 16px 14px; font-size: 26px; }
+.pc-grid { display: grid; gap: 12px; }
+@media (min-width: 760px) { .pc-grid { grid-template-columns: 1fr 1fr; } .pc-title { font-size: 30px; } }
+.pc-card { margin-bottom: 0; display: flex; flex-direction: column; }
+.qr { display: grid; place-items: center; margin: 6px auto 10px; width: 216px; height: 216px; padding: 8px; background: #fff; border-radius: 14px; border: 1px solid var(--line); }
+.qr svg { width: 200px; height: 200px; display: block; }
+.empty-qr { background: var(--surface-2); color: var(--ink-3); }
+.empty-qr .ic { width: 34px; height: 34px; }
+.pc-card .code-box { font-size: 46px; padding: 4px 0 0 .32em; }
+.pc-card .choice:disabled { opacity: .5; cursor: default; }
+.pc-card .choice > .ic { color: var(--ink-3); }
+.small-opt { margin-top: 6px; font-size: 14px; color: var(--ink-2); padding: 6px 2px; }
+.small-opt .check { width: 20px; height: 20px; border-radius: 6px; }
+.small-opt .check .ic { width: 14px; height: 14px; }
+#recv.card { margin-top: 12px; }
+.recent { margin-top: 10px; border-top: 1px solid var(--line); }
+.recent .kv { font-size: 13.5px; }
+.done-ic { width: 32px; height: 32px; color: var(--good-ink); }
+.file-in { position: fixed; left: -100px; top: 0; width: 1px; height: 1px; opacity: 0; }

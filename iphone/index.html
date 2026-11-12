@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f4f3ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Libera">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="Libera para iPhone: envía tus fotos y videos al PC por Wi-Fi, directo y sin servidor, y libera espacio. Gratis, sin App Store, sin cuenta.">
+<title>Libera</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="app.css?v=a5d1e1fc">
+<link rel="stylesheet" href="web.css?v=a5d1e1fc">
+</head>
+<body data-title="Libera · libérer l'iPhone">
+<div id="app" class="web">
+  <header class="top">
+    <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Libera</span></div>
+    <div class="langs" role="group" aria-label="Idioma"><button data-l="es">ES</button><button data-l="fr">FR</button><button data-l="en">EN</button></div>
+  </header>
+  <main id="view" tabindex="-1"></main>
+</div>
+<input type="file" id="pick" class="file-in" multiple accept="image/*,video/*" tabindex="-1" aria-hidden="true">
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<noscript><p style="padding:16px">Libera necesita JavaScript.</p></noscript>
+<script src="icons.js?v=a5d1e1fc"></script>
+<script src="i18n.js?v=a5d1e1fc"></script>
+<script src="common.js?v=a5d1e1fc"></script>
+<script src="meta.js?v=a5d1e1fc"></script>
+<script src="phone.js?v=a5d1e1fc"></script>
+</body>
+</html>
